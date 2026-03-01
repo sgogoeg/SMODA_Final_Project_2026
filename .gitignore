@@ -1,3 +1,7 @@
 # Python virtual environment
 venv/
 .venv/
+data.root
+weights.npz
+*.pdf__pycache__/
+*.pyc
