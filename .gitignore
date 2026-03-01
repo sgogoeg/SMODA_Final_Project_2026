@@ -3,5 +3,7 @@ venv/
 .venv/
 data.root
 weights.npz
-*.pdf__pycache__/
+*.pdf
+__pycache__/
 *.pyc
+
