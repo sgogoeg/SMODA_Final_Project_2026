@@ -15,13 +15,13 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 plt.rcParams.update({
     'font.family': 'monospace',  # monospace font
     "text.latex.preamble": r"\usepackage{courier}",
-    'font.size': 24,
-    'axes.titlesize': 24,
-    'axes.labelsize': 24,
-    'xtick.labelsize': 24,
-    'ytick.labelsize': 24,
-    'legend.fontsize': 24,
-    'figure.titlesize': 24,
+    'font.size': 22,
+    'axes.titlesize': 22,
+    'axes.labelsize': 22,
+    'xtick.labelsize': 22,
+    'ytick.labelsize': 22,
+    'legend.fontsize': 22,
+    'figure.titlesize': 22,
 })
 
 def SamplingTruncatedGaussian(mu, sigma, a, b, size):
@@ -157,7 +157,7 @@ def Plot_Syst_1(weights_sys1plusBCKG, weights_sys1plusSGN, weights_sys1minusBCKG
     fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]}, figsize=(12, 10), sharex=False)
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys1plus, edgecolor='blue', histtype='step', label='Systematic 1 +')
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys1minus, edgecolor='red', histtype='step', label='Systematic 1 -')
-    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Baseline')
+    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Nominal')
     ax[0].set_xlim(60, 160)
     ax[1].set_xlim(60, 160)
     ax[0].legend()
@@ -185,7 +185,7 @@ def Plot_Syst_2(weights_sys2plusBCKG, weights_sys2plusSGN, weights_sys2minusBCKG
     fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]}, figsize=(12, 10), sharex=False)
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys2plus, edgecolor='blue', histtype='step', label='Systematic 2 +')
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys2minus, edgecolor='red', histtype='step', label='Systematic 2 -')
-    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Baseline')
+    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Nominal')
     ax[0].set_xlim(60, 160)
     ax[0].legend()
     ax[1].scatter(bins[:-1] + (bins[1]-bins[0])/2, weights_sys2plus / weights_sum, color='blue')
@@ -210,7 +210,7 @@ def Plot_Syst_3(weights_sys3plusBCKG, weights_sys3plusSGN, weights_sys3minusBCKG
     fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]}, figsize=(12, 10), sharex=False)
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys3plus, edgecolor='blue', histtype='step', label='Systematic 3 +')
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys3minus, edgecolor='red', histtype='step', label='Systematic 3 -')
-    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Baseline')
+    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Nominal')
     ax[0].set_xlim(60, 160)
     ax[0].legend()
     ax[1].scatter(bins[:-1] + (bins[1]-bins[0])/2, weights_sys3plus / weights_sum, color='blue')
@@ -234,7 +234,7 @@ def Plot_Syst_4(weights_sys4plusBCKG, weights_sys4plusSGN, weights_sys4minusBCKG
     fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [4, 1]}, figsize=(12, 10), sharex=False)
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys4plus, edgecolor='blue', histtype='step', label='Systematic 4 +')
     ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sys4minus, edgecolor='red', histtype='step', label='Systematic 4 -')
-    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Baseline')
+    ax[0].hist(bins[:-1], bins=bins, density=False, weights=weights_sum, edgecolor='green', histtype='step', label='Nominal')
     ax[0].set_xlim(60, 160)
     ax[0].legend()
     ax[1].scatter(bins[:-1] + (bins[1]-bins[0])/2, weights_sys4plus / weights_sum, color='blue')
